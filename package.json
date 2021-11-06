@@ -1,0 +1,26 @@
+{
+  "name": "subgraph",
+  "version": "1.0.0",
+  "repository": "https://github.com/devcryptodude/nft-subgraph",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "codegen:nft": "graph codegen subgraphs/nft.yaml",
+    "build:nft": "graph build subgraphs/nft.yaml",
+    "create-local": "graph create devcryptodude/nft-subgraph --node http://127.0.0.1:8020",
+    "deploy-local": "graph deploy devcryptodude/nft-subgraph --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "create-remote": "graph create devcryptodude/nft-subgraph --node http://188.34.132.202:8020",
+    "deploy": "graph deploy devcryptodude/nft-subgraph --ipfs http://161.97.117.103:5001/ --node http://188.34.132.202:8020/ --debug",
+    "deploy-staging": "graph deploy --debug   --ipfs http://localhost:5001 --node http://127.0.0.1:8020 devcryptodude/nft subgraph.yaml",
+    "watch-local": "graph deploy graphprotocol/devcryptodude --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.20.0",
+    "@graphprotocol/graph-ts": "^0.20.0",
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
+    "eslint": "^7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
+  }
+}

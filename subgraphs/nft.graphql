@@ -1,0 +1,9 @@
+type NFTContract @entity {
+  # factory address
+  id: ID!
+  tokenId: BigInt!
+  value: BigInt!
+  owner: Bytes!
+  metadata: String!
+}
+

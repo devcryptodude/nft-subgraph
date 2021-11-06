@@ -1,0 +1,27 @@
+specVersion: 0.0.2
+description: NFT subgraph
+repository: https://github.com/devcryptodude/subgraph
+schema:
+  file: ./nft.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: NFT
+    network: rinkeby
+    source:
+      address: '0x13AA487F07c13A4E4252c6b3ACFEd74BB35ed1c8'
+      abi: NFT
+      startBlock: 9585246
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ../src/nft/mappings/nft.ts
+      entities:
+        - NFT
+        - Token
+      abis:
+        - name: NFT
+          file: ../abis/NFT.json
+      eventHandlers:
+        - event: Mint(uint256,uint256)
+          handler: handleNewMint
