@@ -1,7 +1,7 @@
 {
   "name": "subgraph",
   "version": "1.0.0",
-  "repository": "https://github.com/devcryptodude/nft-subgraph",
+  "repository": "https://github.com/devcryptodude/subgraph",
   "license": "GPL-3.0-or-later",
   "scripts": {
     "codegen:nft": "graph codegen subgraphs/nft.yaml",
