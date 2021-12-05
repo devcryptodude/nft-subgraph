@@ -6,12 +6,13 @@
   "scripts": {
     "codegen:nft": "graph codegen subgraphs/nft.yaml",
     "build:nft": "graph build subgraphs/nft.yaml",
-    "create-local": "graph create devcryptodude/nft-subgraph --node http://127.0.0.1:8020",
-    "deploy-local": "graph deploy devcryptodude/nft-subgraph --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "create-local": "graph create devcryptodude/nft-subgraph --node http://51.15.59.222:8020",
+    "deploy-local": "graph deploy devcryptodude/nft-subgraph --debug --ipfs http://51.15.59.222:5001 --node http://51.15.59.222:8020 subgraphs/nft.yaml",
     "create-remote": "graph create devcryptodude/nft-subgraph --node https://api.thegraph.com/deploy/",
     "deploy": "graph deploy devcryptodude/nft-subgraph --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ --debug",
-    "deploy-staging": "graph deploy --debug   --ipfs http://localhost:5001 --node http://127.0.0.1:8020 devcryptodude/nft subgraph.yaml",
-    "watch-local": "graph deploy graphprotocol/devcryptodude --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
+    "nft": "graph codegen subgraphs/nft.yaml && graph build subgraphs/nft.yaml && graph create devcryptodude/nft-subgraph --node http://51.15.59.222:8020 && graph deploy devcryptodude/nft-subgraph --debug --ipfs http://51.15.59.222:5001 --node http://51.15.59.222:8020 subgraphs/nft.yaml",
+    "deploy-staging": "graph deploy --debug   --ipfs http://localhost:5001 --node http://51.15.59.222:8020 devcryptodude/nft subgraphs/nft.yaml",
+    "watch-local": "graph deploy graphprotocol/devcryptodude --watch --debug --node http://51.15.59.222:8020/ --ipfs http://51.15.59.222:5001"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.20.0",

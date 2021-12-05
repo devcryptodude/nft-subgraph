@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: NFT
-    network: rinkeby
+    network: mainnet
     source:
-      address: '0xB9e35b96Bafd1dA54AA1caaC03c9c863E9a872a0'
+      address: "0xfa2d86f493007cb7a6cbac3605222ddf5b0e3573"
       abi: NFT
-      startBlock: 9585245
+      startBlock: 1
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
@@ -22,11 +22,11 @@ dataSources:
         - name: NFT
           file: ../abis/NFT.json
       eventHandlers:
-        - event: Mint(uint256,uint256)
-          handler: handleMint
         - event: NameChange(indexed uint256,string)
           handler: handleNameChange
-        - event: BioChange(indexed uint256,string)
-          handler: handleBioChange
+        - event: ResetStain(uint256)
+          handler: handleResetStain
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
+
+
