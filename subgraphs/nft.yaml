@@ -8,7 +8,7 @@ dataSources:
     name: NFT
     network: mainnet
     source:
-      address: "0xfa2d86f493007cb7a6cbac3605222ddf5b0e3573"
+      address: "0x9ade94fff75e9dd7e09f0f9a4b7c4aaa8f30a269"
       abi: NFT
       startBlock: 1
     mapping:
@@ -26,7 +26,11 @@ dataSources:
           handler: handleNameChange
         - event: ResetStain(uint256)
           handler: handleResetStain
+        - event: SetStain(uint256)
+          handler: handleSetStain
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
+        - event: EmitRand()  
+          handler: handleEmitRand
 
 
